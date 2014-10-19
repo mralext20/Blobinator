@@ -9,9 +9,9 @@ import com.badlogic.gdx.scenes.scene2d.*;
 public class Slime extends Actor
 {
 	Texture texture;
-	Texture slime_stopped = new Texture(Gdx.files.internal("slime/blue_slime_stopped.png"));
-	//Texture slime_moving = new Texture(Gdx.files.internal("slime/blue_slime_moving.png"));	Texture not done yet :P
-	Texture slime_dead = new Texture(Gdx.files.internal("slime/blue_slime_death.png"));
+	Texture blue_slime_stopped = new Texture(Gdx.files.internal("slime/blue_slime_stopped.png"));
+	//Texture blue_slime_moving = new Texture(Gdx.files.internal("slime/blue_slime_moving.png"));	Texture not done yet :P
+	Texture blue_slime_dead = new Texture(Gdx.files.internal("slime/blue_slime_death.png"));
 	int isFlipped;
 	Vector2 position, velocity;
 
@@ -19,7 +19,7 @@ public class Slime extends Actor
 	{
 		position = new Vector2(Game.stage.getWidth() / 2, 50);
 		velocity = new Vector2(0, 0);
-		texture = slime_stopped;
+		texture = blue_slime_stopped;
 		isFlipped = -1;
 	}
 
@@ -33,14 +33,14 @@ public class Slime extends Actor
 		if(Game.leftButton.isPressed() && !Game.rightButton.isPressed()) {
 			velocity.x = -5;
 			isFlipped = 1;
-			//texture = slime_moving;
+			//texture = blue_slime_moving;
 		} else if(Game.rightButton.isPressed() && !Game.leftButton.isPressed()) {
 			velocity.x = 5;
 			isFlipped = -1;
-			//texture = slime_moving;
+			//texture = blue_slime_moving;
 		} else {
 			velocity.x = 0;
-			texture = slime_stopped;
+			texture = blue_slime_stopped;
 		}
 
 		position.add(velocity);
