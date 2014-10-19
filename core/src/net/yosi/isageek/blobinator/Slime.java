@@ -9,9 +9,9 @@ import com.badlogic.gdx.scenes.scene2d.*;
 public class Slime extends Actor
 {
 	Texture texture;
-	Texture slime_stopped = new Texture(Gdx.files.internal("slime/slime_stopped.png"));
-	Texture slime_moving = new Texture(Gdx.files.internal("slime/slime_moving.png"));
-	Texture slime_dead = new Texture(Gdx.files.internal("slime/slime_death.png"));
+	Texture slime_stopped = new Texture(Gdx.files.internal("slime/blue_slime_stopped.png"));
+	//Texture slime_moving = new Texture(Gdx.files.internal("slime/blue_slime_moving.png"));	Texture not done yet :P
+	Texture slime_dead = new Texture(Gdx.files.internal("slime/blue_slime_death.png"));
 	int isFlipped;
 	Vector2 position, velocity;
 
@@ -33,11 +33,11 @@ public class Slime extends Actor
 		if(Game.leftButton.isPressed() && !Game.rightButton.isPressed()) {
 			velocity.x = -5;
 			isFlipped = 1;
-			texture = slime_moving;
+			//texture = slime_moving;
 		} else if(Game.rightButton.isPressed() && !Game.leftButton.isPressed()) {
 			velocity.x = 5;
 			isFlipped = -1;
-			texture = slime_moving;
+			//texture = slime_moving;
 		} else {
 			velocity.x = 0;
 			texture = slime_stopped;
