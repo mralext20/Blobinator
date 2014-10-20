@@ -3,6 +3,7 @@ package net.yosi.isageek.blobinator;
 import com.badlogic.gdx.*;
 import com.badlogic.gdx.graphics.*;
 import com.badlogic.gdx.graphics.g2d.*;
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
@@ -32,6 +33,7 @@ public class Slime extends Actor {
 		bdef.position.set(Gdx.graphics.getWidth() / 2 / Game.PPM, 2000 / Game.PPM);
 		bdef.type = BodyType.DynamicBody;
 		body = Game.world.createBody(bdef);
+		body.setLinearDamping(8);
 		PolygonShape shape = new PolygonShape();
 		shape.setAsBox(texture.getWidth() / Game.PPM, texture.getHeight() / Game.PPM);
 		FixtureDef fdef = new FixtureDef();
@@ -47,11 +49,11 @@ public class Slime extends Actor {
 	@Override
 	public void act(float delta){
 		if(Game.leftButton.isPressed() && !Game.rightButton.isPressed()) {
-			body.applyForceToCenter(-2, 0, true);
+			body.applyForceToCenter(new Vector2(-2, 0), true);
 			isFlipped = 1;
 			//texture = blue_slime_moving;
 		} else if(Game.rightButton.isPressed() && !Game.leftButton.isPressed()) {
-			body.applyForceToCenter(2, 0, true);
+			body.applyForceToCenter(new Vector2(2, 0), true);
 			isFlipped = -1;
 			//texture = blue_slime_moving;
 		} else {
