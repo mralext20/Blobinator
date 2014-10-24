@@ -3,17 +3,11 @@ package net.yosi.isageek.blobinator;
 import com.badlogic.gdx.*;
 import com.badlogic.gdx.graphics.*;
 import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.physics.box2d.Body;
-import com.badlogic.gdx.physics.box2d.BodyDef;
-import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
-import com.badlogic.gdx.physics.box2d.FixtureDef;
-import com.badlogic.gdx.physics.box2d.PolygonShape;
-import com.badlogic.gdx.physics.box2d.World;
+import com.badlogic.gdx.physics.box2d.*;
 import com.badlogic.gdx.physics.box2d.BodyDef.BodyType;
 import com.badlogic.gdx.scenes.scene2d.*;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.ui.Button.*;
-
 public class Game implements ApplicationListener{
 	
 	public static final int PPM = 10;
@@ -95,17 +89,11 @@ public class Game implements ApplicationListener{
 	}
 
 	@Override
-	public void resize(int width, int height)
-	{
-	}
+	public void resize(int width, int height) {}
 
 	@Override
-	public void pause()
-	{
-	}
+	public void pause() {}
 
 	@Override
-	public void resume()
-	{
-	}
+	public void resume() {}
 }
